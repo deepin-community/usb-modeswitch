@@ -1,0 +1,26 @@
+From: Didier Raboud <odyx@debian.org>
+Date: Tue, 30 Aug 2016 14:24:05 +0200
+Subject: Detect if systemd is running,
+ not only if its corresponding configfiles is installed
+
+ Also change the systemctl path to fit Debian's
+
+Origin: vendor
+Bug-Debian: https://bugs.debian.org/725394
+---
+ usb_modeswitch.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/usb_modeswitch.sh b/usb_modeswitch.sh
+index 437431e..2c15784 100755
+--- a/usb_modeswitch.sh
++++ b/usb_modeswitch.sh
+@@ -63,7 +63,7 @@ fi
+ 
+ PATH=/bin:/sbin:/usr/bin:/usr/sbin
+ init_path=`readlink -f /sbin/init`
+-if [ `basename $init_path` = "systemd" ]; then
++if [ `basename $init_path` = "systemd" ] && [ -d "/run/systemd/system/" ]; then # Test if systemd is running
+ 	systemctl --no-block restart usb_modeswitch@$p2.service
+ elif [ -e "/etc/init/usb-modeswitch-upstart.conf" ]; then
+ 	initctl emit --no-wait usb-modeswitch-upstart UMS_PARAM=$p2

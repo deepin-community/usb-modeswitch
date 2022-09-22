@@ -1,0 +1,2 @@
+version=4
+opts=dversionmangle=s/\+repack\d*$//,repacksuffix=+repack http://www.draisberghof.de/usb_modeswitch/ usb-modeswitch-([\d.]*)\.tar\.bz2

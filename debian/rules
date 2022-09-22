@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+export DEB_CFLAGS_MAINT_APPEND = $(shell dpkg-buildflags --get CPPFLAGS)
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+include /usr/share/dpkg/architecture.mk
+ifeq ($(origin CC),default)
+CC = $(DEB_HOST_GNU_TYPE)-gcc
+endif
+export PKG_CONFIG = $(DEB_HOST_GNU_TYPE)-pkg-config
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	dh_auto_build -- CC=$(CC) all-with-dynlink-dispatcher
+
+# This allows to select what I want instead of deleting what I don't
+override_dh_auto_install:
+	DESTDIR=debian/tmp/ make CC=$(CC) install-dynlink

@@ -1,0 +1,5 @@
+0001-Fix-official-l-y-typo.patch
+0002-Detect-if-systemd-is-running-not-only-if-its-corresp.patch
+0003-Set-TMPDIR-run-for-usb_modeswitch_dispatcher.patch
+0004-Allow-replacing-pkg-config-with-triplet-pkg-config.patch
+0005-Add-Documentation-pointer-in-systemd-service-unit.patch

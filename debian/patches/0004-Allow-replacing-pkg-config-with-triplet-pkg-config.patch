@@ -1,0 +1,23 @@
+From: Helmut Grohne <helmut@subdivi.de>
+Date: Tue, 30 Aug 2016 14:27:55 +0200
+Subject: Allow replacing pkg-config with <triplet>-pkg-config
+
+Bug-Debian: https://bugs.debian.org/836018
+---
+ Makefile | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index bcd512f..aa1c5c8 100644
+--- a/Makefile
++++ b/Makefile
+@@ -2,7 +2,8 @@ PROG        = usb_modeswitch
+ VERS        = 2.6.1
+ CC          ?= gcc
+ CFLAGS      += -Wall -Wno-deprecated-declarations
+-LIBS        = `pkg-config --libs --cflags libusb-1.0`
++PKG_CONFIG  ?= pkg-config
++LIBS        = `$(PKG_CONFIG) --libs --cflags libusb-1.0`
+ RM          = /bin/rm -f
+ OBJS        = usb_modeswitch.c
+ PREFIX      = $(DESTDIR)/usr

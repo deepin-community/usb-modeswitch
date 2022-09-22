@@ -1,0 +1,44 @@
+From: Didier Raboud <odyx@debian.org>
+Date: Tue, 30 Aug 2016 14:24:06 +0200
+Subject: Set TMPDIR=/run for usb_modeswitch_dispatcher
+
+It might be run before /tmp/ is available.
+---
+ usb-modeswitch-upstart.conf | 1 +
+ usb_modeswitch.sh           | 1 +
+ usb_modeswitch@.service     | 1 +
+ 3 files changed, 3 insertions(+)
+
+diff --git a/usb-modeswitch-upstart.conf b/usb-modeswitch-upstart.conf
+index 0d82b69..1fda4ba 100644
+--- a/usb-modeswitch-upstart.conf
++++ b/usb-modeswitch-upstart.conf
+@@ -1,5 +1,6 @@
+ start on usb-modeswitch-upstart
+ task
++env TMPDIR=/run
+ script
+ 	exec /usr/sbin/usb_modeswitch_dispatcher --switch-mode $UMS_PARAM
+ end script
+diff --git a/usb_modeswitch.sh b/usb_modeswitch.sh
+index 2c15784..fe53925 100755
+--- a/usb_modeswitch.sh
++++ b/usb_modeswitch.sh
+@@ -47,6 +47,7 @@ case "$1" in
+ 		device_in "link_list" $v_id $p_id
+ 		if [ "$?" = "1" ]; then
+ 			if [ -e "/usr/sbin/usb_modeswitch_dispatcher" ]; then
++				export TMPDIR=/run
+ 				exec usb_modeswitch_dispatcher $1 $2 2>>/dev/null
+ 			fi
+ 		fi
+diff --git a/usb_modeswitch@.service b/usb_modeswitch@.service
+index 22d2ea7..ea40c8d 100644
+--- a/usb_modeswitch@.service
++++ b/usb_modeswitch@.service
+@@ -6,4 +6,5 @@ Type=oneshot
+ ExecStart=/usr/sbin/usb_modeswitch_dispatcher --switch-mode %i
+ # Testing
+ #ExecStart=/bin/echo "usb_modeswitch.service: device name is %i"
++Environment="TMPDIR=/run"
+ 

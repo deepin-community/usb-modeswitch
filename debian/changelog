@@ -1,0 +1,716 @@
+usb-modeswitch (2.6.1-3) unstable; urgency=medium
+
+  * adopt package (Closes: #993778)
+  * debian/usb-modeswitch.prerm: (Closes: #926562)
+          remove link_list besides other runtime files in prerm
+
+ -- Thorsten Alteholz <debian@alteholz.de>  Sat, 16 Oct 2021 18:40:56 +0200
+
+usb-modeswitch (2.6.1-2) unstable; urgency=medium
+
+  * Orphan package
+  * Run wrap-and-sort -baskt
+  * S-V: Update to 4.6.0 without changes needed
+  * Add Salsa CI configuration
+  * Update watch file format version to 4
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 06 Sep 2021 12:40:56 +0200
+
+usb-modeswitch (2.6.1-1) unstable; urgency=medium
+
+  * New 2.6.1 upstream release
+
+ -- Didier Raboud <odyx@debian.org>  Fri, 10 Jul 2020 23:02:57 +0200
+
+usb-modeswitch (2.6.0-3) unstable; urgency=medium
+
+  * Use secure URI in Homepage field.
+  * Bump debhelper from old 12 to 13.
+  * Update standards version to 4.5.0, no changes needed.
+  * Backport preliminary 2.6.1 patch:
+    - Changed the wrapper script to look for interfaces according to
+      availability instead of fixed numbers (LP: #1676763)
+
+ -- Didier Raboud <odyx@debian.org>  Sun, 05 Jul 2020 22:01:30 +0200
+
+usb-modeswitch (2.6.0-2) unstable; urgency=medium
+
+  * Bump S-V to 4.4.1 without changes needed
+  * Set Rules-Requires-Root to no
+
+ -- Didier Raboud <odyx@debian.org>  Fri, 06 Dec 2019 18:37:41 +0100
+
+usb-modeswitch (2.6.0-1) unstable; urgency=medium
+
+  * Update to new upstream version 2.6.0; the repack is not needed anymore as
+    the embedded 'jim' library has been taken out
+  * Convert to git-debrebase workflow
+  * Refresh patches
+  * d/rules: Update make targets
+  * Enable the Salsa CI Team standard pipeline
+
+ -- Didier Raboud <odyx@debian.org>  Fri, 06 Dec 2019 18:05:06 +0100
+
+usb-modeswitch (2.5.2+repack0-2) unstable; urgency=medium
+
+  * Update Vcs-* for the move to Salsa
+
+ -- Didier Raboud <odyx@debian.org>  Fri, 23 Feb 2018 20:56:18 +0100
+
+usb-modeswitch (2.5.2+repack0-1) unstable; urgency=medium
+
+  * New upstream version 2.5.2
+  * Set priority optional
+  * Drop unused source lintian override
+  * Bump debhelper compat to 11
+  * Mangle version in debian/watch
+  * Drop trailing whitespace in debian/changelog
+  * Rewrite debian/copyright with CF1.0
+  * Bump S-V to 4.1.3
+
+ -- Didier Raboud <odyx@debian.org>  Sun, 07 Jan 2018 12:32:11 +0100
+
+usb-modeswitch (2.5.1+repack0-1) unstable; urgency=medium
+
+  * New upstream version 2.5.1
+  * Bump debhelper compat to 10
+  * Bump S-V to 4.1.0 without changes needed
+  * Cleanup patch-suite:
+    - Remove upstart-specific enhancements
+    - Drop patch naming
+    - Add Documentation pointer in systemd service unit
+  * Stop installing the upstart conffile
+  * Drop all postinst code managing versions before the current
+    oldoldstable (wheezy, 1.2.3)
+
+ -- Didier Raboud <odyx@debian.org>  Fri, 25 Aug 2017 09:41:39 +0200
+
+usb-modeswitch (2.5.0+repack0-1) unstable; urgency=medium
+
+  * New 2.5.0 upstream release
+  * Initialize git-dpm with the existing patches
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 23 Jan 2017 08:10:40 +0100
+
+usb-modeswitch (2.4.0+repack0-1) unstable; urgency=medium
+
+  * New 2.4.0 upstream release
+  * Refresh patches
+  * Bump S-V to 3.9.8 without changes needed
+  * Set hardening=+all in DEB_BUILD_MAINT_OPTIONS
+  * Use the https alternative in VCS-Browser
+  * Add patch to fix official{,l}y typo
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 13 Jun 2016 08:52:09 +0200
+
+usb-modeswitch (2.3.0+repack0-1) unstable; urgency=medium
+
+  * New 2.3.0 upstream release
+    - Fixed bug which prevented early logging
+  * Remove patch to use udev-specific code to wait on /usr mount
+    (Closes: #810104)
+  * Update gbp.conf
+
+ -- Didier Raboud <odyx@debian.org>  Wed, 13 Jan 2016 15:56:26 +0100
+
+usb-modeswitch (2.2.6+repack0-1) unstable; urgency=medium
+
+  * New 2.2.6 upstream release
+
+ -- Didier Raboud <odyx@debian.org>  Wed, 16 Dec 2015 13:00:52 +0100
+
+usb-modeswitch (2.2.5+repack0-1) unstable; urgency=medium
+
+  * New 2.2.5 upstream release
+  * Refresh patches
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 20 Jul 2015 12:12:31 +0200
+
+usb-modeswitch (2.2.3+repack0-1) unstable; urgency=medium
+
+  * New 2.2.3 upstream release
+    - Resolve systemd v221 incompatibility (Closes: #790652)
+  * Refresh patches
+
+ -- Didier Raboud <odyx@debian.org>  Wed, 01 Jul 2015 21:24:07 +0200
+
+usb-modeswitch (2.2.2+repack0-1) unstable; urgency=medium
+
+  * New 2.2.2 upstream release
+    - Changed systemd template unit parameter to avoid escaping problems
+      (Closes: #787842)
+  * Refresh patches
+  * Update debian/rules to new branch names and gbp
+  * Add gbp.conf for dch and import-orig
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 29 Jun 2015 08:37:14 +0200
+
+usb-modeswitch (2.2.1+repack0-1) unstable; urgency=low
+
+  * New 2.2.1 upstream release
+    - Fixed unreliable switching function for Cisco AM10
+  * Bump Standards-Version to 3.9.6 without changes needed
+
+ -- Didier Raboud <odyx@debian.org>  Wed, 27 May 2015 08:09:32 +0200
+
+usb-modeswitch (2.2.0+repack0-2) unstable; urgency=medium
+
+  * Add patch to set TMPDIR to /run, add Build-Depends version constraint to
+    pull a libjim supporting the setting of TMPDIR (Closes: #751271)
+
+ -- Didier Raboud <odyx@debian.org>  Tue, 12 Aug 2014 12:59:22 +0200
+
+usb-modeswitch (2.2.0+repack0-1) unstable; urgency=medium
+
+  * New 2.2.0 upstream release
+    - Introduction of parameter "HuaweiNewMode", wrapping the standard bulk
+      message for all newer Huawei devices;
+    - Support for generic fallback config files, combined with OS switch (per
+      vendor ID);
+
+  * Repack the upstream tarball:
+    - Drop the code copy of jimtcl.
+
+  * Bump usb-modeswitch-data depends to 20140529
+  * Update VCS-* fields to canonical form
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 09 Jun 2014 11:21:08 +0200
+
+usb-modeswitch (2.1.1+repack0-1) unstable; urgency=medium
+
+  * New 2.1.1 upstream release
+    - "Interface" parameter was not working as expected, fixed
+      (LP: #1261923)
+
+  * Repack the upstream tarball:
+    - Drop the code copy of jimtcl.
+
+  * Bump usb-modeswitch-data depends to 20140327
+  * Append CPPFLAGS to CFLAGS
+
+ -- Didier Raboud <odyx@debian.org>  Tue, 01 Apr 2014 13:28:36 +0200
+
+usb-modeswitch (2.1.0+repack0-1) unstable; urgency=medium
+
+  * New 2.1.0 upstream release
+    - -I flag meaning reversed, default is to skip SCSI inquiry
+
+  * Repack the upstream tarball:
+    - Drop the code copy of jimtcl.
+
+  * Bump usb-modeswitch-data depends to 20140129
+  * Bump Standards-Version to 3.9.5 without changes needed
+  * Add get-orig-source target to do the automatic repacking
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 10 Feb 2014 12:58:03 +0100
+
+usb-modeswitch (2.0.1+repack0-2) unstable; urgency=low
+
+  * Update the systemd patch to change the systemctl path to fit
+    Debian's (Closes: #725394) - thanks to Ralf Jung
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 30 Sep 2013 10:57:27 +0200
+
+usb-modeswitch (2.0.1+repack0-1) unstable; urgency=low
+
+  * New 2.0.1 upstream release
+    - Switched to libusb1.0
+    - Major code and debug output cleanup
+    - Man page corrections and additions
+    - Experimental systemd and upstart integration
+
+  * Repack the upstream tarball:
+    - Drop the code copy of jimtcl.
+
+  * Refresh patches for 2.0.1
+  * Update Build-Depends to add libusb-1.0-0-dev and pkg-config
+  * Incorporate support for upstart and systemd
+    - patch the dispatcher to correctly check if upstart or systemd are running
+    - install the upstart init file and the systemd service file
+
+ -- Didier Raboud <odyx@debian.org>  Wed, 18 Sep 2013 19:53:11 +0200
+
+usb-modeswitch (1.2.6+repack0-1) unstable; urgency=low
+
+  * New 1.2.6 upstream release
+    - Several changes to streamline compiling as part of larger
+      projects, mostly in Makefile;
+    - fix compiler warnings appearing in certain build environments;
+    - new Quanta procedure for Quanta 1K3 LTE;
+    - fix for error with cascaded hubs in dispatcher script.
+
+  * Repack the upstream tarball:
+    - Drop the code copy of jimtcl.
+
+  * Replace 04_cope_with_repack patch by one to to use the
+    package-provided jimsh and libjim.
+  * Bump usb-modeswitch-data depends to 20130607.
+
+ -- Didier Raboud <odyx@debian.org>  Sat, 08 Jun 2013 18:07:17 +0200
+
+usb-modeswitch (1.2.5+repack0-2) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 06 May 2013 17:36:17 +0200
+
+usb-modeswitch (1.2.5+repack0-1) experimental; urgency=low
+
+  * New 1.2.5 upstream release
+    - Initial support for MBIM devices, use with data package >= 20121109;
+    - checking for these is the automatic default, new parameter
+      NoMBIMCheck prevents the check per device in case of problems; new
+      global option to set "delay_use" of usb-storage (as low values may
+      prevent mode-switching);
+    - fix for handling multi-configuration devices (thanks to Bjørn Mork
+      for advice).
+
+  * Repack the upstream tarball:
+    - Drop the code copy of jimtcl.
+
+  * Bump usb-modeswitch-data depends to 20121109.
+  * Bump Standards-Version to 3.9.4 and debhelper B-D to 9 without
+    changes needed.
+
+ -- Didier Raboud <odyx@debian.org>  Tue, 20 Nov 2012 10:45:07 +0100
+
+usb-modeswitch (1.2.4+repack0-1) experimental; urgency=low
+
+  * New 1.2.4 upstream release
+    - Additional interface checks to prevent sending UFI commands to
+      non-storage interfaces (prompted by more ambiguous device IDs
+      popping up);
+    - Change in SierraMode for handling newer devices which caused an
+      error abort before;
+    - Makefile fix for parallelized make runs.
+
+  * Repack the upstream tarball:
+    - Drop the code copy of jimtcl.
+
+  * Drop patch to disable logging as was (temporarily) enabled in 1.2.3.
+  * Refresh patches.
+
+ -- Didier Raboud <odyx@debian.org>  Tue, 28 Aug 2012 11:13:00 +0200
+
+usb-modeswitch (1.2.3+repack0-1) unstable; urgency=medium
+
+  * New 1.2.3 upstream release.
+    - Fixed two bugs both causing the embedded-jimsh install variant of the
+      dispatcher crash;
+      (Closes: #656688)
+    - Fixed some "regexp" incompatibilities with Debian's libjim.
+      (Closes: #656063)
+
+  * Repack the upstream tarball:
+    - Drop the code copy of jimtcl.
+
+  * Rise urgency to medium as this new upstream release fixes two RC bugs.
+  * Add patch to disable logging as enabled in 1.2.3 upstream release.
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 30 Jan 2012 18:16:11 +0100
+
+usb-modeswitch (1.2.2+repack0-1) unstable; urgency=low
+
+  * New 1.2.2 upstream release.
+    - Fixed bad bug preventing mode switch for devices using TargetClass
+      (Closes: #656248);
+
+  * Repack the upstream tarball:
+    - Drop the code copy of jimtcl.
+
+ -- Didier Raboud <odyx@debian.org>  Thu, 19 Jan 2012 11:27:49 +0100
+
+usb-modeswitch (1.2.1+repack0-1) unstable; urgency=low
+
+  * New 1.2.1 upstream release.
+
+  * Repack the upstream tarball:
+    - Drop the code copy of jimtcl.
+
+  * Refresh patches.
+    × 03_use_udev_specifics.patch: Refresh.
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 02 Jan 2012 21:27:00 +0100
+
+usb-modeswitch (1.2.0+repack0-1) unstable; urgency=low
+
+  * New 1.2.0 upstream release:
+    - added command line options for binary program to accept configuration
+      data via stdin or as a long string parameter - this fixes the bug with
+      non-writable temporary file during boot (Closes: #629371);
+
+  * Repack the upstream tarball:
+    - Drop the code copy of jimtcl.
+
+  * Refresh patches:
+    × 03_use_udev_specifics.patch: Refresh.
+    + 04_cope_with_repack.patch: Add.
+    - wait_half_second_non_scsi.patch: was from upstream; drop.
+  * Link usb-modeswitch-dispatcher against libjim.
+    - Add Build-Depends on jimtcl and libjim-dev.
+    - Drop Depends on tcl/tclsh.
+    - Use explicit makefile targets.
+  * Bump debhelper compat to 9, for auto- buildflags.
+    - Bump debhelper B-D to 8.9.0~.
+    - Add source lintian override.
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 24 Oct 2011 09:50:41 +0200
+
+usb-modeswitch (1.1.9-2) unstable; urgency=low
+
+  * Patch the tcl dispatcher to wait some time with non-scsi-needing
+    devices. (Closes: #637972)
+
+ -- Didier Raboud <odyx@debian.org>  Tue, 16 Aug 2011 23:04:57 +0200
+
+usb-modeswitch (1.1.9-1) unstable; urgency=low
+
+  * New 1.1.9 upstream version:
+    × Refresh 03_use_udev_specifics.patch.
+
+ -- Didier Raboud <odyx@debian.org>  Sun, 07 Aug 2011 16:59:11 +0200
+
+usb-modeswitch (1.1.8-1) unstable; urgency=low
+
+  * New 1.1.8 upstream version:
+    - Rewrite Debian's "override from /etc" code
+      (Closes: #630081, thanks to Alex Hermann).
+    - Fix boot-time switching regression
+      (Closes: #629371, thanks to Christian Kastner).
+
+  * Drop patches obsoleted by 1.1.8:
+    - 01_extract_to_var_lib_not_tmp
+    - 02_allow_override_from_etc
+  * Drop device_reference.txt from docs as upstream dropped it.
+  * Bump Standards-Version to 3.9.2 without changes needed.
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 20 Jun 2011 10:12:34 +0200
+
+usb-modeswitch (1.1.7-1) unstable; urgency=low
+
+  * New 1.1.7 upstream version.
+
+  * Patches:
+    + Add 01_extract_to_var_lib_not_tmp.patch to extract
+      temporary files to /var/lib/usb_modeswitch instead of /tmp.
+    + Add 02_allow_override_from_etc.patch to permit overriding
+      packed configurations with files within /etc/usb_modeswitch.d/.
+    - Remove 02_mp_correct_hyphens.patch: merged upstream.
+    - Remove 04__use_var_lib_not_etc.patch: merged upstream.
+    - Remove 05_fixed_configuration_switching_races.patch: was an upstream
+      backport.
+    - Remove 06_umdp_archive_in_usr.patch: Obsoleted by upstream.
+  * Replace usb-modeswitch-data-packed dependency by a versioned dependency on
+    usb-modeswitch-data (copes with -packed package removal).
+  * Add a postinst maintainer script to move past runtime files to their new
+    (and correct) location under /var/lib/.
+  * Also bump debhelper compat (was forgotten).
+
+ -- Didier Raboud <odyx@debian.org>  Tue, 15 Mar 2011 17:57:00 +0100
+
+usb-modeswitch (1.1.6-2) unstable; urgency=low
+
+  * Upload to unstable.
+  * Use new dh_installdeb maintscript possibility:
+    - Bump debhelper Build-Depends to 8.1.0.
+    - Add Pre-Depends on ${misc:Pre-Depends} to usb-modeswitch.
+    - Remove usb-modeswitch.preinst.
+    - Add usb-modeswitch.maintscript.
+  * Use my @d.o address and remove the DMUA flag.
+
+ -- Didier Raboud <odyx@debian.org>  Wed, 09 Feb 2011 14:11:13 +0100
+
+usb-modeswitch (1.1.6-1) experimental; urgency=low
+
+  * New 1.1.6 upstream version.
+
+  * Add a prerm maintainer script to remove leftover runtime files.
+  * Update package relationships to allow the install of usb-modeswitch-
+    data-packed.
+  * Patches:
+    + 06_umdp_archive_in_usr.patch: Add to search for the compressed archive
+      in /usr/share/usb-modeswitch-data/
+    x Refresh all others.
+  * Bump Standards to 3.9.1 without changes needed.
+
+ -- Didier Raboud <didier@raboud.com>  Tue, 04 Jan 2011 17:22:40 +0100
+
+usb-modeswitch (1.1.5-1) experimental; urgency=low
+
+  * New 1.1.5 upstream version.
+
+  * Patches:
+    - 01_no_bash_before_tcl.patch: remove, included upstream.
+    x Refresh all others.
+
+ -- Didier Raboud <didier@raboud.com>  Wed, 01 Dec 2010 15:59:47 +0100
+
+usb-modeswitch (1.1.4-2) unstable; urgency=low
+
+  * Fix configuration switching race (LP: #673435)
+
+ -- Didier Raboud <didier@raboud.com>  Thu, 11 Nov 2010 14:52:43 +0100
+
+usb-modeswitch (1.1.4-1) unstable; urgency=low
+
+  * Patches:
+    + 04_use_var_lib_not_etc.patch : Add to put runtime files in /var/lib.
+
+  * Release to unstable, thanks to the Release Team approval.
+
+ -- Didier Raboud <didier@raboud.com>  Mon, 30 Aug 2010 18:30:37 +0200
+
+usb-modeswitch (1.1.4-1~exp0) experimental; urgency=high
+
+  * New 1.1.4 upstream version; relevant changes:
+    - The package should work at boot time now (cold and warm);
+      (Closes: #591765, #591722)
+    - wrapper fix for the symlink feature: handling of multiple interrupt
+      ports was incomplete; (Closes: #587776)
+    - wrapper does not longer use a temporary file for the symlink feature
+      (security considerations, Marco d'Itri) (Closes: #591761)
+    - no udev rules grep'ing (Closes: #591760)
+
+  * Patches:
+    + 01_no_bash_before_tcl.patch : add to avoid one more waiting.
+    + 02_mp_correct_hyphens.patch: refresh.
+    + 03_use_udev_specifics.patch: avoid code duplication by using udev
+      specific hotplug functions.
+
+  * Set urgency to high as new upstream fixes security bug.
+
+  * Correct documentation glitches in debian/README.Debian
+    (Closes: #590903)
+
+ -- Didier Raboud <didier@raboud.com>  Tue, 24 Aug 2010 00:07:38 +0200
+
+usb-modeswitch (1.1.3-1) unstable; urgency=low
+
+  * New 1.1.3 upstream version; relevant changes:
+    - Small additions in Makefile (install with -D)
+      => Remove patch 01_mf_install_path.patch
+    - Changes in option handling (NO MORE DEFAULT CONFIG FILE!) and help text
+      => Remove that conffile on upgrade, to avoid misunderstanding.
+      => Include the device_reference.txt as docs.
+    - Wrapper now ignores package manager leftovers in config folder
+      => Remove patch 03_filter_undesired_rules.patch
+    - Replaced bash-specific syntax in wrapper
+      => Remove patch 04_fix_bashism.patch
+
+  * Patches:
+    + 02_mp_correct_hyphens.patch: refresh.
+
+ -- Didier Raboud <didier@raboud.com>  Wed, 23 Jun 2010 10:43:35 +0200
+
+usb-modeswitch (1.1.2-3) unstable; urgency=low
+
+  * Add 04_fix_bashisms.patch to fix bashism in usb_modeswitch.tcl
+    (Closes: #581143)
+
+ -- Didier Raboud <didier@raboud.com>  Tue, 18 May 2010 14:24:17 +0200
+
+usb-modeswitch (1.1.2-2) unstable; urgency=low
+
+  * Add 03_filter_undesired_rules.patch to filter out undesired files
+   (Closes: #579981)
+
+ -- Didier Raboud <didier@raboud.com>  Mon, 03 May 2010 11:37:08 +0200
+
+usb-modeswitch (1.1.2-1) unstable; urgency=low
+
+  * New 1.1.2 upstream version.
+    - Added support for two additional bulk messages
+    - Wrapper handles special ZTE case
+    - Generalized driver loading
+    - New parameter "DriverModule" and "DriverIDPath"
+    - New wrapper facility to add symlink pointing to interrupt port
+  * Update 01_mf_install_path.patch and 02_mp_correct_hyphens.patch
+  * Don't use Debian-specific revisions in debian/control.
+
+ -- Didier Raboud <didier@raboud.com>  Mon, 19 Apr 2010 13:49:19 +0200
+
+usb-modeswitch (1.1.1-1) unstable; urgency=low
+
+  * New 1.1.1 upstream version.
+    - Add separate config file for wrapper (global settings for switching and
+      logging)
+    - Add config file option to disable driver loading
+    - Handling of kernel attribute AVOID_RESET_QUIRK added
+    - Bug fixed in SonyMode
+    - Bug fixed in SuccessCheck logic
+    - Minor flow alignments and fixes
+    - Debian:
+      + Update patches
+      + Update preinst to not drop /etc/usb_modeswitch.conf anymore
+      + Update usb-modeswitch.install to install the conffile
+
+  * Now that I am a DM, add DMUA field to debian/control.
+    Thanks go to Patrick Matthäi for the sponsoring!
+
+ -- Didier Raboud <didier@raboud.com>  Thu, 18 Mar 2010 11:08:06 +0100
+
+usb-modeswitch (1.1.0-2) unstable; urgency=low
+
+  * Drop the udev rules file (shipped in usb-modeswitch-data). Thanks to
+    Sven-Haegar Koch for the report! (Closes: #567438)
+
+ -- Didier Raboud <didier@raboud.com>  Fri, 29 Jan 2010 09:24:41 +0100
+
+usb-modeswitch (1.1.0-1) unstable; urgency=low
+
+  The "All your base are belong to us" release. It was great to collaborate
+  with upstream on that release. Thanks Josh!
+
+  * New 1.1.0 upstream version.
+    - Debian manpage got included, drop docbook-to-man.
+    - Merge the two wrappers and put them in /lib/udev/.
+  * Add a lintian override for the polyglot in /lib/udev/
+  * Update debian/watch to new upstream tarball naming.
+  * Bump dependency on -data to 20100127-1.
+  * Suggest comgt instead of gcom.
+  * Patches:
+    + 01_mf_install_all_path.patch
+       Add
+         - Ensures that the directories are created before accessing them
+         - Disables the udev rules reload
+    + 02_mp_correct_hyphens.patch
+      Add to correct hyphen-used-as-minus-sign on the manpage.
+    - 03_build_system_to_policy.patch
+       Merged upstream.
+    - 05_move_wrappers_to_usr.patch
+       Merged upstream.
+
+ -- Didier Raboud <didier@raboud.com>  Thu, 28 Jan 2010 15:17:38 +0100
+
+usb-modeswitch (1.0.7-1) unstable; urgency=low
+
+  * New 1.0.7 upstream version (Closes: #563527).
+    - Update the manpage
+    - Split source in binary and data packages.
+  * Patches:
+    - 01_correct_broken_huawei_conf.patch
+        Removed.
+    + 03_build_system_to_policy.patch
+        Refreshed.
+    - 04_convert_umconf_to_unicode.patch
+        Removed.
+    + 05_move_wrappers_to_usr.patch
+        Refreshed.
+    - 06_disables_rules.patch
+        Removed.
+  * Add a preinst to delete configuration files forgotten in previous releases
+    - Also delete /etc/udev/rules.d/80-usb_modeswitch.rules.
+    - Delete only the data files not included in the -data upload
+  * Update README.Debian.
+
+ -- Didier Raboud <didier@raboud.com>  Tue, 12 Jan 2010 15:58:14 +0100
+
+usb-modeswitch (1.0.5-1) unstable; urgency=low
+
+  * New 1.0.5 upstream version
+    - Configurations are now stored in independent files under
+      /etc/usb_modeswitch.d/
+    - The devices detection is greatly improved by having a broader set of
+      detection fields (Closes: #527122).
+    - Two new binaries: usb_modeswitch_sh and usb_modeswitch_tcl.
+  * Adaptation to new upstream:
+    - Add tclsh to Depends.
+    - Drop mkrules.py and thus python B-D (Closes: #535445).
+    - Update manpage to 1.0.5 (add --version)
+  * Patches:
+    - 01_correct_broken_huawei_conf.patch : refresh.
+    - 02_umconf_is_no_exec.patch          : remove, merged upstream.
+    - 03_build_system_to_policy.patch     : refresh.
+    - 04_convert_umconf_to_unicode.patch  : Add to get everything in utf-8.
+                                            Thanks to W. Martin Borgert.
+    - 05_move_wrappers_to_usr.patch       : Add. Moves wrappers to specific
+                                            /usr/share/usb_modeswitch
+    - 06_disables_rules.patch             : Add to get the udev rules "opt-in"
+                                            (See NEWS.Debian)
+    - Add headers to make them all comply to DEP-3 Patch Tagging Guidelines.
+  * Bump Standards-Version to 3.8.3
+    - Add README.source.
+  * Document the major changes in NEWS.Debian
+  * Switch to source format 3.0 (quilt). Drop quilt Build-Dep and dh snippet.
+
+ -- Didier Raboud <didier@raboud.com>  Tue, 03 Nov 2009 11:02:31 +0100
+
+usb-modeswitch (1.0.2-1) unstable; urgency=low
+
+  * New 1.0.2 Upstream Version
+    - New devices:
+      + EpiValley SEC-7089 (featured by Alegro and Starcomms / iZAP)
+      + ST Mobile Connect HSUPA USB Modem
+    - The command line options have changed:
+      + On/off flags don't require arguments anymore
+      + long option names changed to standard format (e.g. --HuaweiMode to
+        --huawei-mode)
+    - Code cleanup
+    - Added device inquiry
+    - Send and response endpoints now autoselected
+  * Fix manpage accordingly.
+  * Update mkrules.py accordingly with cleaner coding style, thanks to
+    Kris Warkentin.
+  * Add debian/NEWS with a clear warning about the command line changes.
+  * Fix "Broken generated udev rules for Huawei devices." by adding patch
+    01_correct_broken_huawei_conf.patch (Closes: #530788).
+    - Thus adding quilt to Build-Depends and tweak debian/rules accordingly.
+    - Thanks Stephen Depooter.
+  * debian/rules: Redo from scratch using debhelper tiny style.
+    - Thus bump Build-Depends on debhelper to > 7.0.50.
+    - Use upstream's build system.
+    - Add patch 02_umconf_is_no_exec.patch.
+    - Add patch 03_build_system_to_policy.patch to accept DEB_BUILD_OPTIONS
+      (noopt, nostrip).
+  * Switch packaging to git under Alioth's collab-maint
+    - Add Vcs-{Git,Browser} to debian/control.
+  * Bump Standards to 3.8.2, no changes needed.
+
+ -- Didier Raboud <didier@raboud.com>  Tue, 23 Jun 2009 17:41:06 +0200
+
+usb-modeswitch (0.9.7-1) unstable; urgency=low
+
+  * 0.9.7 new upstream release.
+    "Updated SonyMode, MD 400 now stable; automatic default endpoint detection
+     from Andrew Bird."
+    - Sony Ericsson MD400 now working
+    - Automatic bulk endpoint detection
+  * debian/copyright
+    - Point to GPL version 2, thanks to lintian --pedantic.
+
+ -- Didier Raboud <didier@raboud.com>  Thu, 16 Apr 2009 11:34:47 +0200
+
+usb-modeswitch (0.9.7~beta1-1) experimental; urgency=low
+
+  * 0.9.7beta new upstream release.
+    "Major code clean up, optional success control (both suggested by Daniel
+     Cooper), new devices"
+  * New build system (not used in Debian yet).
+  * New option to enable success control (--success)
+    - Manpage updated
+  * New devices
+    - Option iCON 210,401
+    - Vodafone K3760
+    - ZTE MF636 (aka "Telstra / BigPond 7.2 Mobile Card")
+    - Sierra Wireless Compass 597
+    - MobiData MBD-200HU
+    - Hyundai Mobile MB-810
+  * Bump Standards to 3.8.1. No changes needed.
+
+ -- Didier Raboud <didier@raboud.com>  Mon, 30 Mar 2009 19:44:55 +0200
+
+usb-modeswitch (0.9.6-2) unstable; urgency=low
+
+  * debian/copyright: Make clear that the packaging is GPLv2+, as
+    usb-modeswitch itself
+  * debian/mkrules.py: Generate udev rules based on /etc/usb-modeswitch.conf
+  * Add gcom and wvdial to Suggests.
+
+ -- Didier Raboud <didier@raboud.com>  Sat, 14 Feb 2009 12:32:43 +0100
+
+usb-modeswitch (0.9.6-1) unstable; urgency=low
+
+  * Initial release (Closes: #453732)
+  * Description taken from the ITP, thanks to Aurélien GÉRÔME.
+
+ -- Didier Raboud <didier@raboud.com>  Tue, 03 Feb 2009 14:11:19 +0100

@@ -1,0 +1,19 @@
+From: Didier Raboud <odyx@debian.org>
+Date: Fri, 25 Aug 2017 09:24:12 +0200
+Subject: Add Documentation pointer in systemd service unit
+
+---
+ usb_modeswitch@.service | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/usb_modeswitch@.service b/usb_modeswitch@.service
+index ea40c8d..1962b43 100644
+--- a/usb_modeswitch@.service
++++ b/usb_modeswitch@.service
+@@ -1,5 +1,6 @@
+ [Unit]
+ Description=USB_ModeSwitch_%i
++Documentation=man:usb_modeswitch_dispatcher(1)
+ 
+ [Service]
+ Type=oneshot
